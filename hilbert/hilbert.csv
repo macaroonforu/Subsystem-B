@@ -1,0 +1,39 @@
+# system info hilbert on 2023.04.09.14:12:30
+system_info:
+name,value
+DEVICE,10M50DAF484C6GES
+DEVICE_FAMILY,MAX 10
+GENERATION_ID,1681063947
+#
+#
+# Files generated for hilbert on 2023.04.09.14:12:30
+files:
+filepath,kind,attributes,module,is_top
+simulation/hilbert.v,VERILOG,,hilbert,true
+simulation/submodules/dspba_library_package.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/dspba_library.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/auk_dspip_math_pkg_hpfir.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/auk_dspip_lib_pkg_hpfir.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/auk_dspip_avalon_streaming_controller_hpfir.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/auk_dspip_avalon_streaming_sink_hpfir.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/auk_dspip_avalon_streaming_source_hpfir.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/auk_dspip_roundsat_hpfir.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/altera_avalon_sc_fifo.v,VERILOG,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_rtl_core_u0_m0_wo0_cm0_lutmem.hex,HEX,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_rtl_core_u0_m0_wo0_wi0_r0_ra0_count1_lut_lutmem.hex,HEX,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_rtl_core.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_ast.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_nativelink.tcl,OTHER,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_msim.tcl,OTHER,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_tb.vhd,VHDL,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_mlab.m,OTHER,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_model.m,OTHER,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_coef_int.txt,OTHER,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_input.txt,OTHER,,hilbert_fir_compiler_ii_0,false
+simulation/submodules/hilbert_fir_compiler_ii_0_param.txt,OTHER,,hilbert_fir_compiler_ii_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+hilbert.fir_compiler_ii_0,hilbert_fir_compiler_ii_0
