@@ -1,0 +1,93 @@
+module ssb(i, q, h, d, clk, ena, next_lrclk_fall, rst, usb, ssb_out);
+	parameter L = 24; 
+	parameter M = 16; 
+	parameter O = 42; //Calculated Gamma for Hilbert Filter, can also try 41 if 42 is not working
+	//Hilbert filter has same accumulator wordlength as lpf 
+	parameter DELAYS = 50; 
+	input logic signed [23:0] i; 
+	input logic signed [23:0] q; 
+	input  logic signed [M-1:0]h[DELAYS:0]; 
+	input  logic signed [M-1:0]d[DELAYS:0]; 
+	input logic clk; 
+	input logic ena; 
+	input logic next_lrclk_fall; 
+	input logic rst; 
+	input logic usb; 
+	output logic signed [23:0] ssb_out; 
+	logic signed [23:0] delayed_i; 
+	logic signed [23:0] hilberted_q;
+   logic signed [24:0] add; 
+   logic signed [24:0] sub; 	
+	
+//	logic signed [23:0] add_out; 
+//	logic signed [23:0] sub_out; 
+
+//Want an accumulator wordlength of only 24 bits, and to output bits 23:0, 
+//Hence, A=24, and O = 24 for delay 
+
+initial begin 
+	ssb_out = 24'b0; 
+end 
+
+fir #(.A(L), .O(L)) delay(
+	.x_in(i), 
+	.y_out(delayed_i), 
+	.b(d), 
+	.clk(clk), 
+	.ena(1), 
+	.next_lrclk_fall(next_lrclk_fall), 
+	.rst(rst)
+); 
+
+fir #(.O(O)) hilbert(
+	.x_in(q), 
+	.y_out(hilberted_q), 
+	.b(h), 
+	.clk(clk), 
+	.ena(1), 
+	.next_lrclk_fall(next_lrclk_fall), 
+	.rst(rst)
+); 
+
+always @(*)begin 
+	add = delayed_i + hilberted_q; 
+	sub = delayed_i - hilberted_q; 
+end 
+
+always @(next_lrclk_fall) begin 
+	if(usb)begin 
+		ssb_out = add[23:0]; 
+	end 
+	else 
+		ssb_out = sub[23:0]; 
+end 
+
+//I removed the adder and subtractor units and replaced it with above, and works the same in 
+//ModelSim 
+//adder a0(
+//	.clk(clk), 
+//   .reset(rst), 
+//	.next_lrclk_fall(next_lrclk_fall),
+//	.a(delayed_i), 
+//   .b(hilberted_q), 
+//	.o_c(add_out)
+//); 
+//
+//subtractor s0(
+//	.clk(clk), 
+//   .reset(rst), 
+//	.next_lrclk_fall(next_lrclk_fall),
+//	.a(delayed_i), 
+//   .b(hilberted_q), 
+//	.o_c(sub_out)
+//); 
+//
+//always @(*) begin 
+//	if(usb)begin 
+//		ssb_out = add_out; 
+//	end 
+//	else 
+//		ssb_out = sub_out; 
+//end 
+
+endmodule 

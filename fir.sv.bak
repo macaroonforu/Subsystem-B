@@ -1,0 +1,96 @@
+`timescale 1ns / 100ps
+`default_nettype none
+
+
+//Note: We must to reset initially. 
+
+
+module fir(x_in, y_out, b, clk, ena, next_lrclk_fall, rst);
+parameter DELAYS = 50; //#of coeffs - 1 
+
+
+parameter L = 24;   //Input Word Length 
+parameter K = 24;  //Output word length 
+parameter M = 16; //Coefficient Word Length
+
+//These parameters are custom to each filter 
+parameter A = 46; //Acumulator Wordlength; 
+parameter O = 41; //Gamma 
+
+input  logic signed [L-1:0]             x_in;     //filter signal imput (as a signed integer)
+output logic signed [L-1:0]             y_out;   //output from the system (as a signed integer)
+input  logic signed [M-1:0]b[DELAYS:0];         //signed integer coefficients
+input  logic                            clk;   //divided clock
+input  logic                            ena;
+input  logic                            next_lrclk_fall; 
+input  logic                            rst;
+
+//Take in x[n] on LRCLK falling edge 
+logic signed [L-1:0] x_in_sync;
+async_reg #(.L(L)) SYNCHRONIZER_X_IN(
+    .clk(clk),
+    .ena(next_lrclk_fall),//if we change this to be just ena, there is noise like crazy!!
+    .rst(rst),
+    .d(x_in),
+    .q(x_in_sync)
+);
+
+//wires that connect the delay blocks (registers)
+logic signed [L-1:0] x_wire [DELAYS-1:0];  //propogate x[n] through the filter
+logic signed [A-1:0] y_wire [DELAYS:0];   //propogate running sum through the filter 
+
+//Collect the final output 
+logic signed [A-1:0] fir_output; 
+assign fir_output = y_wire[DELAYS]; 
+
+generate
+    genvar i;
+    for(i = 0; i <= DELAYS; i++) begin: delay1
+        if (i == 0) begin
+            tapped_delay_block #(.L(L), .A(A)) TDB0(  // First delay block
+					 .b(b[0]), 
+                .x_in(x_in_sync), // initial x_in input
+					 .x_out(x_wire[0]),
+                .y_in(24'b0), // first block does not recieve any previous y_wire input
+					 .y_out(y_wire[0]), 
+                .clk(clk),
+                .ena(ena),
+                .rst(rst)
+            );
+        end else if (i == DELAYS) begin
+            tapped_delay_block #(.L(L), .A(A)) TDBD(  // Last delay block
+					 .b(b[DELAYS]),
+					 .x_in(x_wire [DELAYS-1]),
+					 .y_in(y_wire [DELAYS-1]),
+					 .y_out(y_wire[DELAYS]), 
+                .clk(clk),
+                .ena(ena),
+                .rst(rst)
+            );
+        end else begin
+            tapped_delay_block #(.L(L), .A(A)) TDBI(  // ith delay block
+					 .b(b[i]), 
+					 .x_in(x_wire [i-1]),
+                .x_out(x_wire[(i)]),
+					 .y_in(y_wire [i-1]),
+                .y_out(y_wire[(i)]), 
+                .clk(clk),
+                .ena(ena),
+                .rst(rst)
+            );
+        end
+    end
+endgenerate
+
+//Output data on LRCLK falling edge 
+always@(next_lrclk_fall)begin 
+	y_out <= fir_output[(O-1):(O-K)];
+    //y_out <= fir_output[(O-3):(O-K-2)];
+    //y_out <= fir_output[(38):(15)]; 
+end  
+
+endmodule
+
+`default_nettype wire // reengages default behaviour, needed when using 
+                      // other designs that expect it.
+

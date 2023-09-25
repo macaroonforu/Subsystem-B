@@ -1,0 +1,43 @@
+`timescale 1ns / 100ps
+`default_nettype none
+
+module am(i, q, b, clk, ena, next_lrclk_fall, rst, i_out, q_out);
+	parameter L = 24; 
+	parameter M = 16; 
+	parameter DELAYS = 27; 
+	input logic signed [23:0] i; 
+	input logic signed [23:0] q; 
+	input  logic signed [M-1:0]b[DELAYS:0];   
+	input logic clk; 
+	input logic ena; 
+	input logic next_lrclk_fall; 
+	input logic rst; 
+	output logic signed [23:0] i_out; 
+	output logic signed [23:0] q_out; 
+		
+fir_lpf left(
+	.x_in(i), 
+	.y_out(i_out), 
+	.b(b), 
+	.clk(clk), 
+	.ena(1), 
+	.next_lrclk_fall(next_lrclk_fall), 
+	.rst(rst)
+); 
+
+fir_lpf right(
+	.x_in(q), 
+	.y_out(q_out), 
+	.b(b), 
+	.clk(clk), 
+	.ena(1), 
+	.next_lrclk_fall(next_lrclk_fall), 
+	.rst(rst)
+); 
+
+
+endmodule 
+
+
+
+
