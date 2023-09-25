@@ -1,0 +1,195 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Users/Joyce/Documents/ECE295/SubBFiles/testbenches
+vclockdiv
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1680638200
+!i10b 1
+!s100 dVZ?JNC9ni;f]Z=B<flH21
+IMNBaij07G?YGh=n[h;j[T3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 clockdiv_sv_unit
+S1
+R0
+Z4 w1680359839
+8../clockdiv.sv
+F../clockdiv.sv
+L0 1
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1680638199.000000
+Z7 !s107 ../sp_rom.sv|../osc.sv|../mult_unit.sv|../downconverter.sv|../i2s_tx.sv|../i2s_rx.sv|../clockdiv.sv|tb_rxtx.sv|
+Z8 !s90 -reportprogress|300|tb_rxtx.sv|../clockdiv.sv|../i2s_rx.sv|../i2s_tx.sv|../downconverter.sv|../mult_unit.sv|../osc.sv|../sp_rom.sv|
+!i113 1
+Z9 tCvgOpt 0
+vdownconverter
+R1
+R2
+!i10b 1
+!s100 aoQg:TF9DQjkN<i1bd37?2
+InUbGBkeK;4jIfLGjjA5EA3
+R3
+!s105 downconverter_sv_unit
+S1
+R0
+w1680637633
+8../downconverter.sv
+F../downconverter.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vi2s_rx
+R1
+R2
+!i10b 1
+!s100 LV21PLN5[HWaZjAGmID:a2
+I7Q^adcjSfK19<lQSZ0_V62
+R3
+!s105 i2s_rx_sv_unit
+S1
+R0
+R4
+8../i2s_rx.sv
+F../i2s_rx.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vi2s_tx
+R1
+R2
+!i10b 1
+!s100 ]BYN`4cA^NAW7h[g8=Yh73
+IBS3R6AWGIe_Y2deCab>>D0
+R3
+!s105 i2s_tx_sv_unit
+S1
+R0
+R4
+8../i2s_tx.sv
+F../i2s_tx.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vmult
+R1
+R2
+!i10b 1
+!s100 59_dEDz4SQAzJje5bZYY?2
+IXH`RBm6a^J<n=F[HOozKn2
+R3
+!s105 mult_unit_sv_unit
+S1
+R0
+w1680637008
+8../mult_unit.sv
+F../mult_unit.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vosc
+R1
+R2
+!i10b 1
+!s100 hg2HS3T[h`17IH]gIg3b=3
+IbE=IWzJOGL;@HlN`YLK0S3
+R3
+!s105 osc_sv_unit
+S1
+R0
+w1680465668
+8../osc.sv
+F../osc.sv
+L0 6
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vsp_ROM
+R1
+R2
+!i10b 1
+!s100 10=abAIz_Z:j5FPbnMD:I1
+IID=?IYHQHW5N?Jk9ZgBU>3
+R3
+!s105 sp_rom_sv_unit
+S1
+R0
+w1678648680
+8../sp_rom.sv
+F../sp_rom.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+nsp_@r@o@m
+vtb_rxtx
+R1
+R2
+!i10b 1
+!s100 PJ4<k?i9@Mo^=8kZo`mzk2
+I]VbnCJ>QCSOzVQAj3PgiA0
+R3
+!s105 tb_rxtx_sv_unit
+S1
+R0
+w1680467391
+8tb_rxtx.sv
+Ftb_rxtx.sv
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
