@@ -1,0 +1,27 @@
+set_global_assignment -entity "test" -library "lib_test" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "test" -library "lib_test" -name IP_TOOL_VERSION "18.1"
+set_global_assignment -entity "test" -library "lib_test" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "lib_test" -name SPD_FILE [file join $::quartus(sip_path) "../test.spd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "../../../empty_de10_lite_project/empty_de10_lite_project/order27_lpf_80dBattentuation/test.qsys"]
+
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "test.v"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/dspba_library_package.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/dspba_library.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/auk_dspip_math_pkg_hpfir.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/auk_dspip_lib_pkg_hpfir.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/auk_dspip_avalon_streaming_controller_hpfir.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/auk_dspip_avalon_streaming_sink_hpfir.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/auk_dspip_avalon_streaming_source_hpfir.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/auk_dspip_roundsat_hpfir.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_rtl_core.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_ast.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_nativelink.tcl"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_msim.tcl"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_tb.vhd"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_mlab.m"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_model.m"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_coef_int.txt"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_input.txt"]
+set_global_assignment -library "lib_test" -name MISC_FILE [file join $::quartus(sip_path) "submodules/test_fir_compiler_ii_0_param.txt"]

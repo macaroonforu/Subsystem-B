@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.04.09.14:10:24"
+ outputDirectory="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="MAX 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10M50DAF484C6GES"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="avalon_streaming_sink" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="rst" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="24" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="ast_sink_data" direction="input" role="data" width="24" />
+   <port name="ast_sink_valid" direction="input" role="valid" width="1" />
+   <port name="ast_sink_error" direction="input" role="error" width="2" />
+  </interface>
+  <interface name="avalon_streaming_source" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="rst" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="24" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="ast_source_data" direction="output" role="data" width="24" />
+   <port name="ast_source_valid" direction="output" role="valid" width="1" />
+   <port name="ast_source_error" direction="output" role="error" width="2" />
+  </interface>
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="rst" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="test:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=10M50DAF484C6GES,AUTO_DEVICE_FAMILY=MAX 10,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1681063823,AUTO_UNIQUE_ID=(altera_fir_compiler_ii:18.1:L_bandsFilter=1,MODE_STRING=None Set,ModeWidth=0,backPressure=false,bankCount=1,bankDisplay=0,bankInWidth=0,baseAddress=0,busAddressWidth=5,busDataWidth=16,chanPerInputInterface=1,chanPerOutputInterface=1,channelModes=0,1,2,3,clockRate=24.57,clockSlack=0,coeffBitWidth=16,coeffBitWidth_derived=16,coeffComplex=false,coeffFracBitWidth=15,coeffNum=62,coeffReload=false,coeffScaling=auto,coeffSetFixedValue=42,153,349,651,1011,1361,1573,1531,1139,418,-508,-1382,-1907,-1822,-1022,344,1896,3078,3332,2331,116,-2776,-5409,-6669,-5573,-1615,5001,13334,21858,28841,32767,32767,28841,21858,13334,5001,-1615,-5573,-6669,-5409,-2776,116,2331,3332,3078,1896,344,-1022,-1822,-1907,-1382,-508,418,1139,1531,1573,1361,1011,651,349,153,42,coeffSetFixedValueImag=0,0,0,0,0,0,0,0,coeffSetRealValue=2.44140625E-4,8.85009765625E-4,0.00201416015625,0.003753662109375,0.005828857421875,0.007843017578125,0.009063720703125,0.008819580078125,0.006561279296875,0.002410888671875,-0.0029296875,-0.007965087890625,-0.010986328125,-0.010498046875,-0.005889892578125,0.001983642578125,0.01092529296875,0.017730712890625,0.019195556640625,0.013427734375,6.7138671875E-4,-0.0159912109375,-0.031158447265625,-0.038421630859375,-0.0321044921875,-0.009307861328125,0.02880859375,0.076812744140625,0.12591552734375,0.1661376953125,0.188751220703125,0.188751220703125,0.1661376953125,0.12591552734375,0.076812744140625,0.02880859375,-0.009307861328125,-0.0321044921875,-0.038421630859375,-0.031158447265625,-0.0159912109375,6.7138671875E-4,0.013427734375,0.019195556640625,0.017730712890625,0.01092529296875,0.001983642578125,-0.005889892578125,-0.010498046875,-0.010986328125,-0.007965087890625,-0.0029296875,0.002410888671875,0.006561279296875,0.008819580078125,0.009063720703125,0.007843017578125,0.005828857421875,0.003753662109375,0.00201416015625,8.85009765625E-4,2.44140625E-4,coeffSetRealValueImag=0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,coeffSetScaleValue=0.00024193704854064303,0.0008813421053980567,0.002010381665254391,0.003750024252379967,0.005823770382728336,0.007839912453900361,0.009061118508438845,0.008819181459898202,0.0065611023401855335,0.0024078496735711616,-0.002926286206158254,-0.007960880978170683,-0.010985094084928721,-0.0104954595819298,-0.005887134847822314,0.001981579635666219,0.010921729619834742,0.017730529414478554,0.01919367251755768,0.013427506194005689,0.0006682070864455855,-0.015990886827352977,-0.031158035608484243,-0.03841614706470353,-0.032102742178976275,-0.009303055556979488,0.028807789994089426,0.07680925250573653,0.1259109525476518,0.16613586707049252,0.188751220703125,0.188751220703125,0.16613586707049252,0.1259109525476518,0.07680925250573653,0.028807789994089426,-0.009303055556979488,-0.032102742178976275,-0.03841614706470353,-0.031158035608484243,-0.015990886827352977,0.0006682070864455855,0.013427506194005689,0.01919367251755768,0.017730529414478554,0.010921729619834742,0.001981579635666219,-0.005887134847822314,-0.0104954595819298,-0.010985094084928721,-0.007960880978170683,-0.002926286206158254,0.0024078496735711616,0.0065611023401855335,0.008819181459898202,0.009061118508438845,0.007839912453900361,0.005823770382728336,0.003750024252379967,0.002010381665254391,0.0008813421053980567,0.00024193704854064303,coeffSetScaleValueImag=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffType=frac,coefficientReadback=false,coefficientWriteable=false,decimFactor=1,delayRAMBlockThreshold=20,deviceFamily=MAX 10,dspCount=2,dualMemDistRAMThreshold=1280,errorList=0,filterType=single,funcResult=-interp=1 -decim=1 -incycles=511 -len=62 -bankcount=1 -sym -nband=1 -chans=1 -family=&quot;MAX 10&quot; 
+|{}|1|1|1|1|46|38|17|3|noCode|LUTS: 340 DSPs: 2 RAM Bits: 1536|,hardMultiplierThreshold=-1,inputBitWidth=24,inputChannelNum=1,inputFracBitWidth=23,inputInterfaceNum=1,inputRate=0.048,inputType=frac,interpFactor=1,karatsuba=false,latency=17,latency_realOnly=17,lutCount=340,mRAMThreshold=1000000,memBitCount=1536,modeFormatted=--,num_modes=2,outBitWidth=24,outFracBitWidth=21,outFullFracBitWidth=38,outFullFracBitWidth_realOnly=38,outLSBRound=trunc,outLsbBitRem=17,outMSBRound=trunc,outMsbBitRem=5,outType=frac,outWidth=46,outWidth_realOnly=46,outputInterfaceNum=1,outputfifodepth=4,outputfifodepth_realOnly=3,readWriteMode=read_write,reconfigurable=false,reconfigurable_list=0,speedGrade=medium,symmetryMode=sym)"
+   instancePathKey="test"
+   kind="test"
+   version="1.0"
+   name="test">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1681063823" />
+  <parameter name="AUTO_DEVICE" value="10M50DAF484C6GES" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="MAX 10" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/test.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/dspba_library_package.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/dspba_library.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_math_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_lib_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_avalon_streaming_controller_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_avalon_streaming_sink_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_avalon_streaming_source_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_roundsat_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/altera_avalon_sc_fifo.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/test_fir_compiler_ii_0_rtl_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/test_fir_compiler_ii_0_ast.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/test_fir_compiler_ii_0.vhd"
+       type="VHDL"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/empty_de10_lite_project/empty_de10_lite_project/order27_lpf_80dBattentuation/test.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/18.1/ip/altera/dsp/altera_fir_compiler_ii/src/HP_FIR_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="test">queue size: 0 starting:test "test"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="test"><![CDATA["<b>test</b>" reuses <b>altera_fir_compiler_ii</b> "<b>submodules/test_fir_compiler_ii_0</b>"]]></message>
+   <message level="Debug" culprit="test">queue size: 0 starting:altera_fir_compiler_ii "submodules/test_fir_compiler_ii_0"</message>
+   <message level="Debug" culprit="fir_compiler_ii_0"><![CDATA[C:/intelfpga_lite/18.1/quartus/dspba/backend/windows64/fir_ip_api_interface test_fir_compiler_ii_0_rtl_core . MAX10 medium 0 24.57 1 0.048 62 1 1 2 sym 1 24 23 16 15 0 false false -- 16 5 20 1280 1000000 -1 true false 1 -- <<< 42,153,349,651,1011,1361,1573,1531,1139,418,-508,-1382,-1907,-1822,-1022,344,1896,3078,3332,2331,116,-2776,-5409,-6669,-5573,-1615,5001,13334,21858,28841,32767,32767,28841,21858,13334,5001,-1615,-5573,-6669,-5409,-2776,116,2331,3332,3078,1896,344,-1022,-1822,-1907,-1382,-508,418,1139,1531,1573,1361,1011,651,349,153,42 ]]></message>
+   <message level="Debug" culprit="fir_compiler_ii_0"><![CDATA[OUTPARAMS -interp=1 -decim=1 -incycles=511 -len=62 -bankcount=1 -sym -nband=1 -chans=1 -family="MAX 10" 
+|{}|1|1|1|1|46|38|17|3|true|LUTS: 340 DSPs: 2 RAM Bits: 1536|test_fir_compiler_ii_0_rtl_core.vhd|]]></message>
+   <message level="Info" culprit="fir_compiler_ii_0">PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 46, Bankcount 1, Latency 17, CoefBitWidth 16</message>
+   <message level="Info" culprit="fir_compiler_ii_0"><![CDATA["<b>test</b>" instantiated <b>altera_fir_compiler_ii</b> "<b>fir_compiler_ii_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_fir_compiler_ii:18.1:L_bandsFilter=1,MODE_STRING=None Set,ModeWidth=0,backPressure=false,bankCount=1,bankDisplay=0,bankInWidth=0,baseAddress=0,busAddressWidth=5,busDataWidth=16,chanPerInputInterface=1,chanPerOutputInterface=1,channelModes=0,1,2,3,clockRate=24.57,clockSlack=0,coeffBitWidth=16,coeffBitWidth_derived=16,coeffComplex=false,coeffFracBitWidth=15,coeffNum=62,coeffReload=false,coeffScaling=auto,coeffSetFixedValue=42,153,349,651,1011,1361,1573,1531,1139,418,-508,-1382,-1907,-1822,-1022,344,1896,3078,3332,2331,116,-2776,-5409,-6669,-5573,-1615,5001,13334,21858,28841,32767,32767,28841,21858,13334,5001,-1615,-5573,-6669,-5409,-2776,116,2331,3332,3078,1896,344,-1022,-1822,-1907,-1382,-508,418,1139,1531,1573,1361,1011,651,349,153,42,coeffSetFixedValueImag=0,0,0,0,0,0,0,0,coeffSetRealValue=2.44140625E-4,8.85009765625E-4,0.00201416015625,0.003753662109375,0.005828857421875,0.007843017578125,0.009063720703125,0.008819580078125,0.006561279296875,0.002410888671875,-0.0029296875,-0.007965087890625,-0.010986328125,-0.010498046875,-0.005889892578125,0.001983642578125,0.01092529296875,0.017730712890625,0.019195556640625,0.013427734375,6.7138671875E-4,-0.0159912109375,-0.031158447265625,-0.038421630859375,-0.0321044921875,-0.009307861328125,0.02880859375,0.076812744140625,0.12591552734375,0.1661376953125,0.188751220703125,0.188751220703125,0.1661376953125,0.12591552734375,0.076812744140625,0.02880859375,-0.009307861328125,-0.0321044921875,-0.038421630859375,-0.031158447265625,-0.0159912109375,6.7138671875E-4,0.013427734375,0.019195556640625,0.017730712890625,0.01092529296875,0.001983642578125,-0.005889892578125,-0.010498046875,-0.010986328125,-0.007965087890625,-0.0029296875,0.002410888671875,0.006561279296875,0.008819580078125,0.009063720703125,0.007843017578125,0.005828857421875,0.003753662109375,0.00201416015625,8.85009765625E-4,2.44140625E-4,coeffSetRealValueImag=0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,coeffSetScaleValue=0.00024193704854064303,0.0008813421053980567,0.002010381665254391,0.003750024252379967,0.005823770382728336,0.007839912453900361,0.009061118508438845,0.008819181459898202,0.0065611023401855335,0.0024078496735711616,-0.002926286206158254,-0.007960880978170683,-0.010985094084928721,-0.0104954595819298,-0.005887134847822314,0.001981579635666219,0.010921729619834742,0.017730529414478554,0.01919367251755768,0.013427506194005689,0.0006682070864455855,-0.015990886827352977,-0.031158035608484243,-0.03841614706470353,-0.032102742178976275,-0.009303055556979488,0.028807789994089426,0.07680925250573653,0.1259109525476518,0.16613586707049252,0.188751220703125,0.188751220703125,0.16613586707049252,0.1259109525476518,0.07680925250573653,0.028807789994089426,-0.009303055556979488,-0.032102742178976275,-0.03841614706470353,-0.031158035608484243,-0.015990886827352977,0.0006682070864455855,0.013427506194005689,0.01919367251755768,0.017730529414478554,0.010921729619834742,0.001981579635666219,-0.005887134847822314,-0.0104954595819298,-0.010985094084928721,-0.007960880978170683,-0.002926286206158254,0.0024078496735711616,0.0065611023401855335,0.008819181459898202,0.009061118508438845,0.007839912453900361,0.005823770382728336,0.003750024252379967,0.002010381665254391,0.0008813421053980567,0.00024193704854064303,coeffSetScaleValueImag=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffType=frac,coefficientReadback=false,coefficientWriteable=false,decimFactor=1,delayRAMBlockThreshold=20,deviceFamily=MAX 10,dspCount=2,dualMemDistRAMThreshold=1280,errorList=0,filterType=single,funcResult=-interp=1 -decim=1 -incycles=511 -len=62 -bankcount=1 -sym -nband=1 -chans=1 -family=&quot;MAX 10&quot; 
+|{}|1|1|1|1|46|38|17|3|noCode|LUTS: 340 DSPs: 2 RAM Bits: 1536|,hardMultiplierThreshold=-1,inputBitWidth=24,inputChannelNum=1,inputFracBitWidth=23,inputInterfaceNum=1,inputRate=0.048,inputType=frac,interpFactor=1,karatsuba=false,latency=17,latency_realOnly=17,lutCount=340,mRAMThreshold=1000000,memBitCount=1536,modeFormatted=--,num_modes=2,outBitWidth=24,outFracBitWidth=21,outFullFracBitWidth=38,outFullFracBitWidth_realOnly=38,outLSBRound=trunc,outLsbBitRem=17,outMSBRound=trunc,outMsbBitRem=5,outType=frac,outWidth=46,outWidth_realOnly=46,outputInterfaceNum=1,outputfifodepth=4,outputfifodepth_realOnly=3,readWriteMode=read_write,reconfigurable=false,reconfigurable_list=0,speedGrade=medium,symmetryMode=sym"
+   instancePathKey="test:.:fir_compiler_ii_0"
+   kind="altera_fir_compiler_ii"
+   version="18.1"
+   name="test_fir_compiler_ii_0">
+  <parameter name="outBitWidth" value="24" />
+  <parameter name="inputFracBitWidth" value="23" />
+  <parameter
+     name="coeffSetRealValueImag"
+     value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
+  <parameter name="inputInterfaceNum" value="1" />
+  <parameter name="MODE_STRING" value="None Set" />
+  <parameter
+     name="funcResult"
+     value="-interp=1 -decim=1 -incycles=511 -len=62 -bankcount=1 -sym -nband=1 -chans=1 -family=&quot;MAX 10&quot; 
+|{}|1|1|1|1|46|38|17|3|noCode|LUTS: 340 DSPs: 2 RAM Bits: 1536|" />
+  <parameter name="speedGrade" value="medium" />
+  <parameter name="outFullFracBitWidth_realOnly" value="38" />
+  <parameter name="coeffBitWidth" value="16" />
+  <parameter name="coeffType" value="frac" />
+  <parameter name="outMSBRound" value="trunc" />
+  <parameter name="outLSBRound" value="trunc" />
+  <parameter name="coeffReload" value="false" />
+  <parameter name="delayRAMBlockThreshold" value="20" />
+  <parameter name="inputType" value="frac" />
+  <parameter name="chanPerOutputInterface" value="1" />
+  <parameter name="busAddressWidth" value="5" />
+  <parameter name="coefficientWriteable" value="false" />
+  <parameter name="coeffSetFixedValueImag" value="0,0,0,0,0,0,0,0" />
+  <parameter name="num_modes" value="2" />
+  <parameter name="karatsuba" value="false" />
+  <parameter name="coeffBitWidth_derived" value="16" />
+  <parameter name="bankDisplay" value="0" />
+  <parameter name="baseAddress" value="0" />
+  <parameter
+     name="coeffSetRealValue"
+     value="2.44140625E-4,8.85009765625E-4,0.00201416015625,0.003753662109375,0.005828857421875,0.007843017578125,0.009063720703125,0.008819580078125,0.006561279296875,0.002410888671875,-0.0029296875,-0.007965087890625,-0.010986328125,-0.010498046875,-0.005889892578125,0.001983642578125,0.01092529296875,0.017730712890625,0.019195556640625,0.013427734375,6.7138671875E-4,-0.0159912109375,-0.031158447265625,-0.038421630859375,-0.0321044921875,-0.009307861328125,0.02880859375,0.076812744140625,0.12591552734375,0.1661376953125,0.188751220703125,0.188751220703125,0.1661376953125,0.12591552734375,0.076812744140625,0.02880859375,-0.009307861328125,-0.0321044921875,-0.038421630859375,-0.031158447265625,-0.0159912109375,6.7138671875E-4,0.013427734375,0.019195556640625,0.017730712890625,0.01092529296875,0.001983642578125,-0.005889892578125,-0.010498046875,-0.010986328125,-0.007965087890625,-0.0029296875,0.002410888671875,0.006561279296875,0.008819580078125,0.009063720703125,0.007843017578125,0.005828857421875,0.003753662109375,0.00201416015625,8.85009765625E-4,2.44140625E-4" />
+  <parameter name="coeffSetScaleValueImag" value="0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0" />
+  <parameter name="chanPerInputInterface" value="1" />
+  <parameter name="deviceFamily" value="MAX 10" />
+  <parameter name="dspCount" value="2" />
+  <parameter name="outType" value="frac" />
+  <parameter name="symmetryMode" value="sym" />
+  <parameter name="outLsbBitRem" value="17" />
+  <parameter name="decimFactor" value="1" />
+  <parameter name="ModeWidth" value="0" />
+  <parameter name="memBitCount" value="1536" />
+  <parameter name="outputInterfaceNum" value="1" />
+  <parameter name="filterType" value="single" />
+  <parameter name="backPressure" value="false" />
+  <parameter name="inputBitWidth" value="24" />
+  <parameter name="coeffScaling" value="auto" />
+  <parameter name="outFullFracBitWidth" value="38" />
+  <parameter name="coeffNum" value="62" />
+  <parameter name="busDataWidth" value="16" />
+  <parameter name="coeffComplex" value="false" />
+  <parameter name="outputfifodepth_realOnly" value="3" />
+  <parameter name="inputChannelNum" value="1" />
+  <parameter name="channelModes" value="0,1,2,3" />
+  <parameter
+     name="coeffSetScaleValue"
+     value="0.00024193704854064303,0.0008813421053980567,0.002010381665254391,0.003750024252379967,0.005823770382728336,0.007839912453900361,0.009061118508438845,0.008819181459898202,0.0065611023401855335,0.0024078496735711616,-0.002926286206158254,-0.007960880978170683,-0.010985094084928721,-0.0104954595819298,-0.005887134847822314,0.001981579635666219,0.010921729619834742,0.017730529414478554,0.01919367251755768,0.013427506194005689,0.0006682070864455855,-0.015990886827352977,-0.031158035608484243,-0.03841614706470353,-0.032102742178976275,-0.009303055556979488,0.028807789994089426,0.07680925250573653,0.1259109525476518,0.16613586707049252,0.188751220703125,0.188751220703125,0.16613586707049252,0.1259109525476518,0.07680925250573653,0.028807789994089426,-0.009303055556979488,-0.032102742178976275,-0.03841614706470353,-0.031158035608484243,-0.015990886827352977,0.0006682070864455855,0.013427506194005689,0.01919367251755768,0.017730529414478554,0.010921729619834742,0.001981579635666219,-0.005887134847822314,-0.0104954595819298,-0.010985094084928721,-0.007960880978170683,-0.002926286206158254,0.0024078496735711616,0.0065611023401855335,0.008819181459898202,0.009061118508438845,0.007839912453900361,0.005823770382728336,0.003750024252379967,0.002010381665254391,0.0008813421053980567,0.00024193704854064303" />
+  <parameter name="latency" value="17" />
+  <parameter name="lutCount" value="340" />
+  <parameter name="outFracBitWidth" value="21" />
+  <parameter name="outputfifodepth" value="4" />
+  <parameter name="clockRate" value="24.57" />
+  <parameter name="readWriteMode" value="read_write" />
+  <parameter name="reconfigurable" value="false" />
+  <parameter name="outWidth" value="46" />
+  <parameter name="coeffFracBitWidth" value="15" />
+  <parameter
+     name="coeffSetFixedValue"
+     value="42,153,349,651,1011,1361,1573,1531,1139,418,-508,-1382,-1907,-1822,-1022,344,1896,3078,3332,2331,116,-2776,-5409,-6669,-5573,-1615,5001,13334,21858,28841,32767,32767,28841,21858,13334,5001,-1615,-5573,-6669,-5409,-2776,116,2331,3332,3078,1896,344,-1022,-1822,-1907,-1382,-508,418,1139,1531,1573,1361,1011,651,349,153,42" />
+  <parameter name="modeFormatted" value="--" />
+  <parameter name="mRAMThreshold" value="1000000" />
+  <parameter name="bankCount" value="1" />
+  <parameter name="interpFactor" value="1" />
+  <parameter name="outWidth_realOnly" value="46" />
+  <parameter name="errorList" value="0" />
+  <parameter name="L_bandsFilter" value="1" />
+  <parameter name="clockSlack" value="0" />
+  <parameter name="outMsbBitRem" value="5" />
+  <parameter name="reconfigurable_list" value="0" />
+  <parameter name="dualMemDistRAMThreshold" value="1280" />
+  <parameter name="latency_realOnly" value="17" />
+  <parameter name="inputRate" value="0.048" />
+  <parameter name="coefficientReadback" value="false" />
+  <parameter name="bankInWidth" value="0" />
+  <parameter name="hardMultiplierThreshold" value="-1" />
+  <generatedFiles>
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/dspba_library_package.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/dspba_library.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_math_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_lib_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_avalon_streaming_controller_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_avalon_streaming_sink_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_avalon_streaming_source_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/auk_dspip_roundsat_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/altera_avalon_sc_fifo.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/test_fir_compiler_ii_0_rtl_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/test_fir_compiler_ii_0_ast.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="D:/Users/Joyce/Documents/ECE295/SubBFiles/lpf_4000/synthesis/submodules/test_fir_compiler_ii_0.vhd"
+       type="VHDL"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/18.1/ip/altera/dsp/altera_fir_compiler_ii/src/HP_FIR_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="test" as="fir_compiler_ii_0" />
+  <messages>
+   <message level="Debug" culprit="test">queue size: 0 starting:altera_fir_compiler_ii "submodules/test_fir_compiler_ii_0"</message>
+   <message level="Debug" culprit="fir_compiler_ii_0"><![CDATA[C:/intelfpga_lite/18.1/quartus/dspba/backend/windows64/fir_ip_api_interface test_fir_compiler_ii_0_rtl_core . MAX10 medium 0 24.57 1 0.048 62 1 1 2 sym 1 24 23 16 15 0 false false -- 16 5 20 1280 1000000 -1 true false 1 -- <<< 42,153,349,651,1011,1361,1573,1531,1139,418,-508,-1382,-1907,-1822,-1022,344,1896,3078,3332,2331,116,-2776,-5409,-6669,-5573,-1615,5001,13334,21858,28841,32767,32767,28841,21858,13334,5001,-1615,-5573,-6669,-5409,-2776,116,2331,3332,3078,1896,344,-1022,-1822,-1907,-1382,-508,418,1139,1531,1573,1361,1011,651,349,153,42 ]]></message>
+   <message level="Debug" culprit="fir_compiler_ii_0"><![CDATA[OUTPARAMS -interp=1 -decim=1 -incycles=511 -len=62 -bankcount=1 -sym -nband=1 -chans=1 -family="MAX 10" 
+|{}|1|1|1|1|46|38|17|3|true|LUTS: 340 DSPs: 2 RAM Bits: 1536|test_fir_compiler_ii_0_rtl_core.vhd|]]></message>
+   <message level="Info" culprit="fir_compiler_ii_0">PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 46, Bankcount 1, Latency 17, CoefBitWidth 16</message>
+   <message level="Info" culprit="fir_compiler_ii_0"><![CDATA["<b>test</b>" instantiated <b>altera_fir_compiler_ii</b> "<b>fir_compiler_ii_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>
