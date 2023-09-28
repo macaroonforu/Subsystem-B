@@ -9,19 +9,10 @@ localparam NUM_FRAMES = 30;
 // module wires
 // The master clock signal, which will be used to generate the SCLK and LRCLK signals
 logic MCLK;
-// These are optional control signals asserting on the cycle previous to the rise and fall of the SCLK and LRCLK signals
-// They can be used in the testbench or in downstream modules to indicate valid L or R data coming from the i2s_rx module
-
-// The reason I say these signals are optional is that there is more than one way to create a control signal to determine the end of a frame
-// and that is the only mantadory control signal required for the functionality of Subsystem B
-
-// With respect to this individual testbench, all of the below control signals can be considered optional
 logic next_lrclk_fall;
 logic next_lrclk_rise;
 logic next_sclk_fall;
 logic next_sclk_rise;
-// input serial data coming from the producer module 
-//    (in the case of real hardware this signal will be coming from the PMOD ADC device using the timing parameters specified in the datasheet)
 logic i_sdata;
 logic signed [DATA_RES-1:0] ldata, o_right, o_dc_left;
 logic signed [DATA_RES-1:0] rdata, o_left, o_dc_right;
@@ -31,9 +22,6 @@ logic LRCLK;
 logic reset;
 
 // module instantiation
-// This is where you instantiate the i2s_rx module you are testing
-// Your module could have the same or different inputs based on the way
-// you designed your control signals.
 i2s_rx rx0(
     .mclk(MCLK),
     .sclk(SCLK),
