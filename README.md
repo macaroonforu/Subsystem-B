@@ -1,7 +1,3 @@
-# Subsystem-B
-
-
-
 
 <div  align=center>
 	<h1>A Digital Demodulation System	</h1>
